@@ -1,0 +1,18 @@
+{
+    "name": "anna-sock/projet-maxitsa",
+    "description": "projet maxitsa php",
+    "autoload": {
+        "psr-4": {
+            "AnnaSock\\ProjetMaxitsa\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AnnaSock",
+            "email": "annasock542@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
