@@ -3,8 +3,24 @@
     "description": "projet maxitsa php",
     "autoload": {
         "psr-4": {
-            "AnnaSock\\ProjetMaxitsa\\": "src/"
-        }
+            "App\\": "app/",
+            "App\\Config\\": "app/config/",
+            "App\\Core\\": "app/core/",
+            "Src\\Entity\\": "src/entity/",
+            "Src\\Controller\\": "src/controller/",
+            "Src\\Repository\\": "src/repository/",
+            "Src\\Service\\": "src/service/",
+            "App\\Core\\Abstracts\\": "app/core/abstracts/",
+            "App\\Core\\Middlewares\\": "app/core/middlewares/"
+
+
+        },
+
+        "files": [
+            "app/config/helpers.php"
+        ]
+        
+        
     },
     "authors": [
         {

@@ -1,0 +1,17 @@
+<?php
+namespace Src\Controller;
+
+use App\Core\Abstracts\AbstractController;
+
+class DashbordController extends AbstractController{
+
+    public  function index() {
+               $this->renderHtml('dashbord.html.php');
+        }
+        public  function create(){}
+        public  function show(){}
+        public  function edit(){}
+        public  function destroy(){}
+        public  function store(){}
+
+}
