@@ -2,24 +2,19 @@
 namespace App\Core;
 use App\Core\Database;
 use App\Core\ErrorController;
-use App\Core\Router;
-use Src\Entity\Compte;
+
+use Src\Controller\AccesCompteController;
+use Src\Controller\CreerCompteController;
+use Src\Controller\DashbordController;
+use Src\Controller\SecurityController;
 use Src\Entity\Profil;
-use Src\Entity\Transaction;
 use Src\Entity\Utilisateur;
-use Src\Service\CompteService;
-use Src\Service\ProfilService;
-use Src\Service\TransactionService;
-use Src\Service\UtilisateurService;
-use Src\Repository\CompteRepository;
-use Src\Repository\ProfilRepository;
-use Src\Repository\TransactionRepository;
-use Src\Repository\UtilisateurRepository;
+
 
 
 class App{
 
-    protected static array  $dependencies;
+    private static  array $dependencies;
 
     public static function dependencies(){
 
@@ -28,37 +23,23 @@ class App{
 
           "core"=>[
                         "router"=> new Router(),
-                        // "database"=> new Database(),
-                        // "errorController"=>new ErrorController,
-                        // "session"=>new Session(),
-                        // "validator"=> new Validator()
+                        "database"=>  Database::getInstance()->getConnection(),
+                        "errorController"=>new ErrorController(),
+                       
                     ],
-        
-        //   "services"=>[
-        //                 "compteService"=> new CompteService(),
-        //                 "transactionService"=> new TransactionService(),
-        //                 "profilService"=> new ProfilService,
-        //                 "utilisateurService"=> new UtilisateurService()
-        //             ],
+            "controller"=>[
+                            "accesCompteController"=> AccesCompteController::class,
+                            "creerCompteController"=> CreerCompteController::class,
+                            "dashboardController"=> DashbordController::class,
+                            "securityController"=> SecurityController::class,
+               ],     
+      
 
+            "entities"=>[
 
-
-        //   "reporitories"=>[
-        //                 "compteRepository"=> new CompteRepository(),
-        //                 "transactionRepository"=> new TransactionRepository(),
-        //                 "profilRepository"=> new ProfilRepository,
-        //                 "utilisateurRepository"=> new UtilisateurRepository()
-                        
-
-        //             ],
-
-        //     "entities"=>[
-
-        //                 "utilisateur"=> new Utilisateur(),
-        //                 "compte"=> new Compte(),
-        //                 "profil" => new Profil(),
-        //                 "transaction"=> new Transaction(),
-        //             ],
+                        "utilisateur"=> new Utilisateur(),
+                        "profil" => new Profil(),
+                    ],
 
         ];
         }

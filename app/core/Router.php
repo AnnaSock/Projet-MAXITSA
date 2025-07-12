@@ -17,7 +17,8 @@ class Router{
             $controller->$action();
     
         }else{
-            $erreur= new ErrorController();
+
+            $erreur= App::get('core','errorController');
             $erreur->erreur();
         }
        
